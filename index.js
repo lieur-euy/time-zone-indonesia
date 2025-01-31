@@ -1,9 +1,13 @@
 const express = require('express');
 const moment = require('moment-timezone');
+const cors = require('cors');
 
 const app = express();
+
 const PORT = 3005;
 
+
+app.use(cors());
 app.get('/time', (req, res) => {
     const { timezone } = req.query;
     const allowedTimezones = ['Asia/Jakarta', 'Asia/Makassar', 'Asia/Jayapura'];
