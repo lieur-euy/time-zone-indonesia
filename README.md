@@ -44,8 +44,9 @@ API sederhana yang dibangun menggunakan Express.js untuk mendapatkan waktu saat 
 GET http://localhost:3005/time?timezone=Asia/Jakarta
 ```
 
-```bash
- Contoh Respome
+
+#### Contoh Respome
+ ```bash
 {
     "statusCode": 200,
     "message": "Success",
