@@ -22,14 +22,18 @@ app.get('/time', (req, res) => {
     
     try {
         // Ambil waktu saat ini berdasarkan zona waktu
-        const currentTime = moment().tz(timezone).format('YYYY-MM-DD HH:mm:ss');
+        const currentTime = moment().tz(timezone);
+        const formattedTime = currentTime.format('YYYY-MM-DD HH:mm:ss');
+        const unixTime = currentTime.unix(); // Menghasilkan Unix timestamp dalam detik
+
         // Respons sukses
         res.status(200).json({
             statusCode: 200,
             message: "Success",
             data:{
                 timezone: timezone,
-                currentTime: currentTime
+                currentTime: formattedTime,
+                unixtime: unixTime
             }
          
         });
