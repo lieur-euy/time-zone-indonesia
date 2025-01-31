@@ -1,17 +1,57 @@
-Timezone API with Express.js
-This is a simple Node.js application built with Express.js that provides an API to get the current time based on the specified timezone.
+# Timezone API with Express.js
 
-Features
-Get the current time for specific timezones: Asia/Jakarta, Asia/Makassar, and Asia/Jayapura.
+API sederhana yang dibangun menggunakan Express.js untuk mendapatkan waktu saat ini berdasarkan zona waktu yang ditentukan.
 
-Validates the timezone query parameter.
+## Fitur
 
-Returns appropriate HTTP status codes and JSON responses.
+- Mendapatkan waktu saat ini untuk zona waktu tertentu: `Asia/Jakarta`, `Asia/Makassar`, dan `Asia/Jayapura`.
+- Validasi parameter `timezone`.
+- Mengembalikan respons JSON dengan kode status HTTP yang sesuai.
 
-Requirements
-Node.js (v14 or higher)
+## Persyaratan
 
-npm (Node Package Manager)
+- Node.js (versi 14 atau lebih tinggi)
+- npm (Node Package Manager)
 
-Installation
-Clone the repository:
+## Cara Menjalankan
+
+1. **Clone repository**:
+   ```bash
+   git clone https://github.com/lieur-euy/time-zone-indonesia
+   cd nama-repo bash
+
+2. **Install dependencies:**:
+   ```bash
+   npm install
+
+
+3. **Run:**:
+   ```bash
+   node index.js
+   
+## Endpoint API
+
+### Mendapatkan Waktu Saat Ini
+
+- **URL**: `/time`
+- **Method**: `GET`
+- **Parameter Query**:
+  - `timezone`: Zona waktu yang ingin digunakan. Harus salah satu dari: `Asia/Jakarta`, `Asia/Makassar`, `Asia/Jayapura`.
+
+#### Contoh Permintaan
+
+```bash
+GET http://localhost:3005/time?timezone=Asia/Jakarta
+```
+
+```bash
+ Contoh Respome
+{
+    "statusCode": 200,
+    "message": "Success",
+    "data": {
+        "timezone": "Asia/Jakarta",
+        "currentTime": "2023-10-05 16:30:45"
+    }
+}
+```
